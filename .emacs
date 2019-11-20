@@ -4,8 +4,8 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+(add-hook 'projectile-mode-hook (lambda () (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)))
 
-(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (show-paren-mode t)
