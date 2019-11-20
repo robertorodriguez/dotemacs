@@ -18,6 +18,7 @@
 
 (global-set-key [f5] 'revert-buffer)
 (global-set-key [f6] 'toggle-truncate-lines)
+(global-set-key [f7] 'compile)
 (global-set-key [f8] 'eshell)
 (global-set-key [f9] 'magit-log-buffer-file)
 (global-set-key [S-f9] 'ediff-revision)
