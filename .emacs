@@ -5,6 +5,7 @@
 (package-initialize)
 
 
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (show-paren-mode t)
@@ -39,7 +40,7 @@
 
 (add-hook 'js2-mode-hook (lambda ()
 			   
-  (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
+(add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
 
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
@@ -60,7 +61,7 @@
  ;; If there is more than one, they won't work right.
  '(dired-listing-switches "-alh --group-directories-first")
  '(inferior-lisp-program "/usr/bin/sbcl" t)
- '(initial-buffer-choice "~/Dropbox/RAR")
+ '(initial-buffer-choice "~/RAR")
  '(org-agenda-files (quote ("~/Dropbox/RAR/bills-2018-09.org")))
  '(package-selected-packages
    (quote
