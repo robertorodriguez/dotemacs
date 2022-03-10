@@ -60,10 +60,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (tango-dark)))
  '(dired-listing-switches "-alh --group-directories-first")
  '(inferior-lisp-program "/usr/bin/sbcl" t)
  '(initial-buffer-choice "~/RAR")
- '(org-agenda-files (quote ("~/Dropbox/RAR/bills-2018-09.org")))
  '(package-selected-packages
    (quote
     (markdown-mode slime xref-js2 js2-mode jedi git-gutter-fringe projectile-ripgrep projectile magit php-mode)))
