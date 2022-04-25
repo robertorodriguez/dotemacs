@@ -14,7 +14,7 @@
 (setq speedbar-show-unknown-files t)
 (setq calendar-latitude -34.598261)
 (setq calendar-longitude -58.444414)
-
+(server-start)
 
 (global-set-key [f5] 'revert-buffer)
 (global-set-key [f6] 'toggle-truncate-lines)
@@ -29,6 +29,11 @@
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 
+;; php
+(add-hook 'php-mode-hook (lambda () (git-gutter-mode t)))
+
+;; elisp
+(add-hook 'emacs-lisp-mode-hook (lambda () (git-gutter-mode t)))
 
 (ido-mode t)
 (projectile-mode)
@@ -54,20 +59,21 @@
   (find-file (dired-get-file-for-visit)))
 (add-hook 'dired-mode-hook (lambda () (define-key dired-mode-map [mouse-2] 'my-dired-find-file-this-window)))
 
+(setq-default frame-title-format '("%f"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (tango-dark)))
+ '(custom-enabled-themes '(tango-dark))
  '(dired-listing-switches "-alh --group-directories-first")
  '(inferior-lisp-program "/usr/bin/sbcl" t)
  '(initial-buffer-choice "~/RAR")
  '(package-selected-packages
-   (quote
-    (markdown-mode slime xref-js2 js2-mode jedi git-gutter-fringe projectile-ripgrep projectile magit php-mode)))
- '(speedbar-tag-hierarchy-method (quote (speedbar-sort-tag-hierarchy))))
+   '(markdown-mode slime xref-js2 js2-mode jedi git-gutter-fringe projectile-ripgrep projectile magit php-mode))
+ '(show-paren-mode t)
+ '(speedbar-tag-hierarchy-method '(speedbar-sort-tag-hierarchy)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
