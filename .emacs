@@ -35,6 +35,9 @@
 ;; elisp
 (add-hook 'emacs-lisp-mode-hook (lambda () (git-gutter-mode t)))
 
+;; css
+(add-hook 'css-mode-hook (lambda () (git-gutter-mode t)))
+
 (ido-mode t)
 (projectile-mode)
 
