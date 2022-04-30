@@ -38,6 +38,9 @@
 ;; css
 (add-hook 'css-mode-hook (lambda () (git-gutter-mode t)))
 
+;; html
+(add-hook 'mhtml-mode-hook (lambda () (git-gutter-mode t)))
+
 (ido-mode t)
 (projectile-mode)
 
@@ -74,7 +77,7 @@
  '(inferior-lisp-program "/usr/bin/sbcl" t)
  '(initial-buffer-choice "~/RAR")
  '(package-selected-packages
-   '(markdown-mode slime xref-js2 js2-mode jedi git-gutter-fringe projectile-ripgrep projectile magit php-mode))
+   '(git-gutter+ markdown-mode slime xref-js2 js2-mode jedi projectile-ripgrep projectile magit php-mode))
  '(show-paren-mode t)
  '(speedbar-tag-hierarchy-method '(speedbar-sort-tag-hierarchy)))
 (custom-set-faces
