@@ -79,7 +79,8 @@
  '(package-selected-packages
    '(git-gutter+ markdown-mode slime xref-js2 js2-mode jedi projectile-ripgrep projectile magit php-mode))
  '(show-paren-mode t)
- '(speedbar-tag-hierarchy-method '(speedbar-sort-tag-hierarchy)))
+ '(speedbar-tag-hierarchy-method '(speedbar-sort-tag-hierarchy))
+ '(tool-bar-style 'image))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
