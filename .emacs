@@ -14,7 +14,7 @@
 (setq speedbar-show-unknown-files t)
 (setq calendar-latitude -34.598261)
 (setq calendar-longitude -58.444414)
-(server-start)
+;(server-start)
 
 (global-set-key [f5] 'revert-buffer)
 (global-set-key [f6] 'toggle-truncate-lines)
@@ -25,24 +25,24 @@
 
 ;; python
 
-(add-hook 'python-mode-hook (lambda () (hs-minor-mode t) (git-gutter-mode t)))
+(add-hook 'python-mode-hook (lambda () (hs-minor-mode t) ))
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 
 ;; php
-(add-hook 'php-mode-hook (lambda () (git-gutter-mode t)))
+(add-hook 'php-mode-hook (lambda () ))
 
 ;; elisp
-(add-hook 'emacs-lisp-mode-hook (lambda () (git-gutter-mode t)))
+(add-hook 'emacs-lisp-mode-hook (lambda () ))
 
 ;; css
-(add-hook 'css-mode-hook (lambda () (git-gutter-mode t)))
+(add-hook 'css-mode-hook (lambda () ))
 
 ;; html
-(add-hook 'mhtml-mode-hook (lambda () (git-gutter-mode t)))
+(add-hook 'mhtml-mode-hook (lambda () ))
 
 (ido-mode t)
-(projectile-mode)
+
 
 ;; javascript
 (require 'js2-mode)
@@ -74,10 +74,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(tango-dark))
  '(dired-listing-switches "-alh --group-directories-first")
- '(inferior-lisp-program "/usr/bin/sbcl" t)
  '(initial-buffer-choice "~/RAR")
- '(package-selected-packages
-   '(git-gutter+ markdown-mode slime xref-js2 js2-mode jedi projectile-ripgrep projectile magit php-mode))
  '(show-paren-mode t)
  '(speedbar-tag-hierarchy-method '(speedbar-sort-tag-hierarchy))
  '(tool-bar-style 'image))
