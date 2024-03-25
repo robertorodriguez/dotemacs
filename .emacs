@@ -15,7 +15,7 @@
 (setq calendar-latitude -34.598261)
 (setq calendar-longitude -58.444414)
 ;(server-start)
-
+(projectile-mode)
 (global-set-key [f5] 'revert-buffer)
 (global-set-key [f6] 'toggle-truncate-lines)
 (global-set-key [f7] 'compile)
@@ -75,6 +75,7 @@
  '(custom-enabled-themes '(tango-dark))
  '(dired-listing-switches "-alh --group-directories-first")
  '(initial-buffer-choice "~/RAR")
+ '(package-selected-packages '(projectile magit js2-mode git-gutter compat))
  '(show-paren-mode t)
  '(speedbar-tag-hierarchy-method '(speedbar-sort-tag-hierarchy))
  '(tool-bar-style 'image))
