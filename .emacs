@@ -14,7 +14,7 @@
 (setq speedbar-show-unknown-files t)
 (setq calendar-latitude -34.598261)
 (setq calendar-longitude -58.444414)
-;(server-start)
+(server-start)
 (projectile-mode)
 (global-set-key [f5] 'revert-buffer)
 (global-set-key [f6] 'toggle-truncate-lines)
@@ -63,9 +63,16 @@
   "In Dired, visit this file or directory in this window."
   (interactive)
   (find-file (dired-get-file-for-visit)))
-(add-hook 'dired-mode-hook (lambda () (define-key dired-mode-map [mouse-2] 'my-dired-find-file-this-window)))
+(add-hook 'dired-mode-hook (lambda () (define-key dired-mode-map [mouse-2] 'my-dired-find-file-this-window)
+			     (define-key dired-mode-map (kbd "s-f") 'find-dired)))
+
 
 (setq-default frame-title-format '("%f"))
+
+;; active Babel languages
+(org-babel-do-load-languages
+'org-babel-load-languages
+'((shell . t)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -75,10 +82,15 @@
  '(custom-enabled-themes '(tango-dark))
  '(dired-listing-switches "-alh --group-directories-first")
  '(initial-buffer-choice "~/RAR")
- '(package-selected-packages '(projectile magit js2-mode git-gutter compat))
+ '(package-selected-packages
+   '(typescript-mode nov projectile magit js2-mode git-gutter compat))
  '(show-paren-mode t)
  '(speedbar-tag-hierarchy-method '(speedbar-sort-tag-hierarchy))
- '(tool-bar-style 'image))
+ '(tool-bar-style 'image)
+ '(world-clock-list
+   '(("America/Los_Angeles" "Seattle")
+     ("America/Chicago" "Dallas")
+     ("America/New_York" "Washington"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
