@@ -3,7 +3,10 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
-
+(if (string-equal "NetBSD" (string-chop-newline (shell-command-to-string "uname")))
+    (progn
+      (setq ls-lisp-use-insert-directory-program nil)
+      (require 'ls-lisp)))
 (add-hook 'projectile-mode-hook (lambda () (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)))
 
 (add-to-list 'package-archives
