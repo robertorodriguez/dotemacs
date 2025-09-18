@@ -3,7 +3,8 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
-(if (string-equal "NetBSD" (string-chop-newline (shell-command-to-string "uname")))
+(if (or (string-equal "NetBSD" (string-chop-newline (shell-command-to-string "uname")))
+	(string-equal "FreeBSD" (string-chop-newline (shell-command-to-string "uname"))))	
     (progn
       (setq ls-lisp-use-insert-directory-program nil)
       (require 'ls-lisp)))
