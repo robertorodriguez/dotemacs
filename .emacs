@@ -59,8 +59,7 @@
 (define-key js-mode-map (kbd "M-.") nil)
 
 (add-hook 'js2-mode-hook (lambda ()
-			   
-(add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
+			   (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
 
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
@@ -82,8 +81,8 @@
 
 ;; active Babel languages
 (org-babel-do-load-languages
-'org-babel-load-languages
-'((shell . t)))
+ 'org-babel-load-languages
+ '((shell . t)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
