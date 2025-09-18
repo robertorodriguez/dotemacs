@@ -3,11 +3,15 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
+
+; fix display of directories in BSD
 (if (member (string-chop-newline (shell-command-to-string "uname"))
 	    '("FreeBSD" "NetBSD"))
     (progn
       (setq ls-lisp-use-insert-directory-program nil)
       (require 'ls-lisp)))
+
+; configuration of projectile prefix
 (add-hook 'projectile-mode-hook (lambda () (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)))
 
 (add-to-list 'package-archives
@@ -28,7 +32,6 @@
 (global-set-key [S-f9] 'ediff-revision)
 
 ;; python
-
 (add-hook 'python-mode-hook (lambda () (hs-minor-mode t) ))
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
@@ -44,6 +47,7 @@
 
 ;; html
 (add-hook 'mhtml-mode-hook (lambda () ))
+
 
 (ido-mode t)
 
@@ -63,11 +67,14 @@
 
 ;(load (expand-file-name "~/quicklisp/slime-helper.el"))
 
+
 (defun my-dired-find-file-this-window ()
   "In Dired, visit this file or directory in this window."
   (interactive)
   (find-file (dired-get-file-for-visit)))
-(add-hook 'dired-mode-hook (lambda () (define-key dired-mode-map [mouse-2] 'my-dired-find-file-this-window)
+
+(add-hook 'dired-mode-hook (lambda ()
+			     (define-key dired-mode-map [mouse-2] 'my-dired-find-file-this-window)
 			     (define-key dired-mode-map (kbd "s-f") 'find-dired)))
 
 
