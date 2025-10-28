@@ -4,6 +4,9 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+; use authinfo file for ftp passwords
+(customize-set-variable 'ange-ftp-netrc-filename "~/.authinfo.gpg")
+
 ; fix display of directories in BSD
 (if (member (string-chop-newline (shell-command-to-string "uname"))
 	    '("FreeBSD" "NetBSD"))
@@ -93,14 +96,13 @@
  '(dired-listing-switches "-alh --group-directories-first")
  '(initial-buffer-choice "~/RAR")
  '(package-selected-packages
-   '(typescript-mode nov projectile magit js2-mode git-gutter compat))
+   '(compat git-gutter js2-mode magit projectile typescript-mode))
  '(show-paren-mode t)
  '(speedbar-tag-hierarchy-method '(speedbar-sort-tag-hierarchy))
  '(tool-bar-style 'image)
  '(world-clock-list
-   '(("America/Los_Angeles" "Seattle")
-     ("America/Chicago" "Dallas")
-     ("America/New_York" "Washington"))))
+   '(("America/Los_Angeles" "Seattle") ("America/Chicago" "Dallas")
+     ("America/New_York" "Washington") ("Europe/Madrid" "Madrid"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
